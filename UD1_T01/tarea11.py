@@ -1,17 +1,12 @@
-import math
+diccionario = {
+    "uno": 1,
+    "dos": 2,
+    "tres": 3
+}
 
-x1 = float(input("x1: "))
-y1 = float(input("y1: "))
+inverso = {}
 
-x2 = float(input("x2: "))
-y2 = float(input("y2: "))
+for clave, valor in diccionario.items():
+    inverso[valor] = clave
 
-punto1 = (x1, y1)
-punto2 = (x2, y2)
-
-distancia = math.sqrt(
-    (punto2[0] - punto1[0]) ** 2 +
-    (punto2[1] - punto1[1]) ** 2
-)
-
-print("Distancia:", distancia)
+print(inverso)

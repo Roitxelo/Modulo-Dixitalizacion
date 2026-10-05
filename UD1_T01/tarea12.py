@@ -1,17 +1,31 @@
-import math
+agenda = {}
 
-x1 = float(input("x1: "))
-y1 = float(input("y1: "))
+while True:
 
-x2 = float(input("x2: "))
-y2 = float(input("y2: "))
+    print("\n1. Añadir contacto")
+    print("2. Buscar contacto")
+    print("0. Salir")
 
-punto1 = (x1, y1)
-punto2 = (x2, y2)
+    opcion = input("Opción: ")
 
-distancia = math.sqrt(
-    (punto2[0] - punto1[0]) ** 2 +
-    (punto2[1] - punto1[1]) ** 2
-)
+    if opcion == "1":
 
-print("Distancia:", distancia)
+        nombre = input("Nombre: ")
+        telefono = input("Teléfono: ")
+
+        if nombre in agenda:
+            agenda[nombre].append(telefono)
+        else:
+            agenda[nombre] = [telefono]
+
+    elif opcion == "2":
+
+        nombre = input("Nombre a buscar: ")
+
+        if nombre in agenda:
+            print(agenda[nombre])
+        else:
+            print("Contacto no encontrado")
+
+    elif opcion == "0":
+        break
