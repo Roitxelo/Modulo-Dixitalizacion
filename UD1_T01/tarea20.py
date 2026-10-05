@@ -24,7 +24,19 @@ class Biblioteca:
         return None
 
     def listarLibros(self):
+        print(f"Listado de libros de {self.nombre}")
         for l in self.libros:
-            print(libro)
+            print(l)
 
-            
+
+if __name__ == "__main__":
+
+    libro1 = Libro("Mariposas", "JG Maestro")
+    libro2 = Libro("Bochan", "Euclides")
+
+    biblioteca = Biblioteca("BiblioCovelo")
+
+    biblioteca.añadirLibros(libro1)
+    biblioteca.añadirLibros(libro2)
+    biblioteca.listarLibros()
+    print(f"\nBuscando libro... \n{biblioteca.buscarLibro("Mariposas")}")
